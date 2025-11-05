@@ -1,0 +1,30 @@
+p{
+   text-align: center;
+   font-size: 3em;
+}
+
+.box{
+   
+    text-align: center;
+}
+
+button{
+    width: 5em;
+    height: 3em;
+    background-color: hsl(195, 100%, 67%);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color:hsl(195, 95%, 52%);
+}
+
+#restartBtn{
+    background-color: hsl(120, 100%, 66%);
+    width: 10em;
+}
+#restartBtn:hover{
+    background-color: hsl(120, 95%, 52%);
+}
+
