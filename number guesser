@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number guesser</title>
+    <style>
+p{
+   text-align: center;
+   font-size: 3em;
+}
+
+.box{
+   
+    text-align: center;
+}
+
+button{
+    width: 5em;
+    height: 3em;
+    background-color: hsl(195, 100%, 67%);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color:hsl(195, 95%, 52%);
+}
+
+#restartBtn{
+    background-color: hsl(120, 100%, 66%);
+    width: 10em;
+}
+#restartBtn:hover{
+    background-color: hsl(120, 95%, 52%);
+}
+    </style>
+</head>
+<body>
+    <h1>Think of a number 1-100</h1>
+    <p>Is your number <span id="num">50</span>?</p>
+    <div class="box">
+    <button id="lowerBtn" onclick="Lower()">lower</button>
+    <button id="correctBtn" onclick="Correct()">correct</button>
+    <button id="higherBtn" onclick="Higher()">higher</button> <br><br>
+    <button id="restartBtn" onclick="Restart()">restart</button>
+    </div>
+    
+    <script>
+let current = 50;
+let left = 0;
+let right = 100;
+let found = false;
+
+
+function Correct() {
+  alert("Yay! I guessed your number!");
+  found = true;
+}
+
+function Lower() {
+  if(found != true){  
+  right = current;
+  current = (left + current) / 2;
+  document.getElementById("num").textContent = Math.trunc(current);   
+  }
+}
+
+function Higher() {
+  if(found != true){  
+  left = current;
+  current = (current + right) / 2;
+  document.getElementById("num").textContent = Math.trunc(current);    
+  }
+}
+
+function Restart() {
+    current = 50;
+    left = 0;
+    right = 100;
+    found = false;
+    document.getElementById("num").textContent = current; 
+}
+    </script>
+</body>
+</html>
